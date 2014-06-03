@@ -1,0 +1,113 @@
+.no-select
+{
+   user-select: none;
+   -o-user-select:none;
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+}
+
+.mainFont
+{
+	line-height: 18px;
+	font-size: 12px;
+	font-family: arial;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(227, 228, 228, 0.8);
+}
+
+p
+{
+	margin: 0;
+	line-height: 18px;
+	font-size: 12px;
+	font-family: arial;
+}
+
+table
+{
+	user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+	margin: 0 auto 0 auto;
+	height: 35px;
+}
+
+td
+{
+	width: 150px;
+	text-align: center;
+	padding: 5px;
+}
+
+td:hover
+{
+	background-color: rgba(163, 164, 164, 0.8);
+}
+
+td:active
+{
+	background-color: rgba(115, 116, 116, 0.8);
+}
+
+.header
+{
+	line-height: 18px;
+	font-size: 12px;
+	font-family: arial;
+	height: 35px;
+	width: 100%;
+	border-bottom: 1px solid #969797;
+	position: fixed;
+	background-color: rgba(227, 228, 228, 0.8);
+}
+
+.mainContainer1
+{
+	width: 900px;
+	height: 1000px;
+	background-image: url(../img/IMG.jpg);
+	background-color: #D6D7D7;
+	margin: 0 auto 0 auto;
+}
+
+.mainContainer2
+{
+	width: 900px;
+	height: 1000px;
+	background-image: url(../img/Ei.jpg);
+	background-color: #D6D7D7;
+	margin: 0 auto 0 auto;
+}
+
+.mainContainer3
+{
+	width: 900px;
+	height: 1000px;
+	background-image: url(../img/Herz.jpg);
+	background-color: #D6D7D7;
+	margin: 0 auto 0 auto;
+}
+
+.mainContainer4
+{
+	width: 900px;
+	height: 1000px;
+	background-image: url(../img/Auge.jpg);
+	background-color: #D6D7D7;
+	margin: 0 auto 0 auto;
+}
+
+.content
+{
+	padding: 50px;
+}
