@@ -17,18 +17,28 @@
 		<script type="text/javascript" src="js/routes/productPageRoute.js"></script>
 		<script type="text/javascript" src="js/routes/impressumRoute.js"></script>
 
+    <!-- controllers -->
+    <script type="text/javascript" src="js/controllers/layoutController.js"></script>
+    <script type="text/javascript" src="js/controllers/startPageController.js"></script>
+    <script type="text/javascript" src="js/controllers/companyPageController.js"></script>
+    <script type="text/javascript" src="js/controllers/productPageController.js"></script>
+    <script type="text/javascript" src="js/controllers/impressumController.js"></script>
+
 		<!--Stylesheets-->
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
 	<body>
-		<div class="header">
-      <table>
-        <td>Startseite</td>
-        <td>Produkt</td>
-        <td>Unternehmen</td>
-        <td>Impressum</td>
-      </table>
-    </div>
+    <script type="text/x-handlebars" data-template-name="layout">
+  		<div class="header">
+        <table>
+          <td id="startPageLink" {{action 'home'}}>Startseite</td>
+          <td id="productPageLink" {{action 'product'}}>Produkt</td>
+          <td id="companyPageLink" {{action 'company'}}>Unternehmen</td>
+          <td id="impressumLink" {{action 'impressum'}}>Impressum</td>
+        </table>
+      </div>
+      {{outlet}}
+    </script>
 
     <script type="text/x-handlebars" data-template-name="startPage">
   		<div class="mainContainer1">
