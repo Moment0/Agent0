@@ -1,5 +1,5 @@
-.no-select
-{
+/* essentials */
+.no-select {
    user-select: none;
    -o-user-select:none;
    -moz-user-select: none;
@@ -7,25 +7,26 @@
    -webkit-user-select: none;
 }
 
-.mainFont
-{
+.mainFont {
 	line-height: 18px;
 	font-size: 12px;
 	font-family: arial;
 }
 
-.test1, .test2 {
-	height: 200px;
-	width: 500px;
-	background-color: blue;
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
-.test2 + .test1 {
-	background-color: red;
+.flex-container > .item {
+	-webkit-flex: 1 0 0;
+	flex: 1 0 0;
 }
 
-body
-{
+/* main elements */
+body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -33,44 +34,7 @@ body
 	background-color: rgba(227, 228, 228, 0.8);
 }
 
-p
-{
-	margin: 0;
-	line-height: 18px;
-	font-size: 12px;
-	font-family: arial;
-}
-
-table
-{
-	user-select: none;
-  -o-user-select:none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-	margin: 0 auto 0 auto;
-	height: 35px;
-}
-
-td
-{
-	width: 150px;
-	text-align: center;
-	padding: 5px;
-}
-
-td:hover
-{
-	background-color: rgba(163, 164, 164, 0.8);
-}
-
-td:active
-{
-	background-color: rgba(115, 116, 116, 0.8);
-}
-
-.header
-{
+.header {
 	line-height: 18px;
 	font-size: 12px;
 	font-family: arial;
@@ -81,43 +45,49 @@ td:active
 	background-color: rgba(227, 228, 228, 0.8);
 }
 
-.mainContainer1
-{
+.main-container {
 	width: 900px;
 	height: 1000px;
+	background-color: #D6D7D7;
+	margin: 0 auto 0 auto;
+}
+
+.main-container-1 {
 	background-image: url(../img/IMG.jpg);
-	background-color: #D6D7D7;
-	margin: 0 auto 0 auto;
 }
 
-.mainContainer2
-{
-	width: 900px;
-	height: 1000px;
+.main-container-2 {
 	background-image: url(../img/Ei.jpg);
-	background-color: #D6D7D7;
-	margin: 0 auto 0 auto;
 }
 
-.mainContainer3
-{
-	width: 900px;
-	height: 1000px;
+.main-container-3 {
 	background-image: url(../img/Herz.jpg);
-	background-color: #D6D7D7;
-	margin: 0 auto 0 auto;
 }
 
-.mainContainer4
-{
-	width: 900px;
-	height: 1000px;
+.main-container-4 {
 	background-image: url(../img/Auge.jpg);
-	background-color: #D6D7D7;
-	margin: 0 auto 0 auto;
 }
 
-.content
-{
+.tabs {
+	height: 35px;
+	width: 900px;
+	margin: auto;
+}
+
+.tab {
+	height: 100%;
+	line-height: 35px;
+	text-align: center;
+}
+
+.tab:hover {
+	background-color: rgba(163, 164, 164, 0.8);
+}
+
+.tab:active {
+	background-color: rgba(115, 116, 116, 0.8);
+}
+
+.content {
 	padding: 50px;
 }

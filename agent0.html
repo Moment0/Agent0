@@ -29,46 +29,40 @@
 	</head>
 	<body>
     <script type="text/x-handlebars" data-template-name="layout">
-  		<div class="header">
-        <table>
-          <td id="startPageLink" {{action 'home'}}>Startseite</td>
-          <td id="productPageLink" {{action 'product'}}>Produkt</td>
-          <td id="companyPageLink" {{action 'company'}}>Unternehmen</td>
-          <td id="impressumLink" {{action 'impressum'}}>Impressum</td>
-        </table>
+  		<div class="flex-container header">
+        <div class="tabs flex-container">
+          <div class="tab item no-select" {{action 'home'}}>Startseite</div>
+          <div class="tab item no-select" {{action 'product'}}>Produkt</div>
+          <div class="tab item no-select" {{action 'company'}}>Unternehmen</div>
+          <div class="tab item no-select" {{action 'impressum'}}>Impressum</div>
+        </div>
       </div>
       {{outlet}}
-      <div class="test1"></div>
-      <div class="test2"></div>
-      <div class="test1"></div>
-      <div class="test2"></div>
-      <div class="test1"></div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="startPage">
-  		<div class="mainContainer1">
+  		<div class="main-container main-container-1">
         <div class="content">
         </div>
 		  </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="productPage">
-  		<div class="mainContainer2">
+  		<div class="main-container main-container-2">
         <div class="content">
-			<p>blabla</p>
         </div>
 		  </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="companyPage">
-  		<div class="mainContainer3">
+  		<div class="main-container main-container-3">
         <div class="content">
         </div>
 		  </div>
     </script>
 
     <script type="text/x-handlebars" data-template-name="impressum">
-  		<div class="mainContainer4">
+  		<div class="main-container main-container-4">
         <div class="content">
         </div>
 		  </div>
