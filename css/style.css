@@ -1,4 +1,81 @@
-/* essentials */
+/* ---------- main-elements   ---------- */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  justify-content: center;
+  -o-justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  flex-direction: column;
+  -o-flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: flex-start;
+  -o-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -webkit-align-items: flex-start;
+  flex: 0 0 auto;
+  -o-flex: 0 0 auto;
+  -moz-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+
+footer {
+  padding: 15px;
+  min-height: 100px;
+  color: rgb(230, 230, 230);
+  font-family: arial;
+  font-size: 12px;
+  background-color: rgb(25, 25, 25);
+  align-items: center;
+  -o-align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -o-justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+  background-image: url(../img/test_sprite.png);
+  background-size: 15px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.site {
+  flex-direction: column;
+  -o-flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -webkit-fley: 1 1 0;
+  min-width: 1020px;
+}
+
+.content {
+  border: 1px solid rgb(216, 216, 216);
+  padding: 20px;
+  flex: 1 0 auto;
+  -o-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+}
+
+/* ---------- essentials ---------- */
 .no-select {
    user-select: none;
    -o-user-select:none;
@@ -7,87 +84,156 @@
    -webkit-user-select: none;
 }
 
-.mainFont {
-	line-height: 18px;
-	font-size: 12px;
-	font-family: arial;
-}
-
 .flex-container {
-	display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: center;
-	justify-content: center;
+  display: flex;
+  display: -o-flex;
+  display: -moz-flex;
+  display: -webkit-flex;
 }
 
-.flex-container > .item {
-	-webkit-flex: 1 0 0;
-	flex: 1 0 0;
+.invisible {
+  display: none;
 }
 
-/* main elements */
-body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(227, 228, 228, 0.8);
+/* ---------- styling ---------- */
+.logo {
+  margin-left: -20px;
+  width: 250px;
+  height: 80px;
+  font-size: 70px;
+  font-family: 'Wire One', sans-serif;
+  letter-spacing: 2px;
+  color: #FFF;
+  background-color: rgb(250, 75, 42);
+  align-items: center;
+  -o-align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -o-justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
 }
 
-.header {
-	line-height: 18px;
-	font-size: 12px;
-	font-family: arial;
-	height: 35px;
-	width: 100%;
-	border-bottom: 1px solid #969797;
-	position: fixed;
-	background-color: rgba(227, 228, 228, 0.8);
+.logo p {
+  margin-right: 10px;
 }
 
-.main-container {
-	width: 900px;
-	height: 1000px;
-	background-color: #D6D7D7;
-	margin: 0 auto 0 auto;
+.navbar {
+  width: 100%;
+  height: 36px;
+  background-color: #2C2C2C;
+  color: #FFF;
+  font-family: 'Wire One', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  flex-direction: row;
+  -o-flex-direction: row;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex: 1 0 auto;
+  -o-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+  align-items: flex-end;
+  -o-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -webkit-align-items: flex-end;
+  justify-content: space-around;
+  -o-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -webkit-justify-content: space-around;
 }
 
-.main-container-1 {
-	background-image: url(../img/IMG.jpg);
+#fixed-navbar {
+    z-index: 9999;
+    position: fixed;
+    left: auto;
+    top: 0;
+    width: 1020px;
+    box-shadow: 2px 2px 5px 2px #2C2C2C;
+    -o-box-shadow: 2px 2px 5px 2px #2C2C2C;
+    -moz-box-shadow: 2px 2px 5px 2px #2C2C2C;
+    -webkit-box-shadow: 0 0 7px 2px #2C2C2C;
 }
 
-.main-container-2 {
-	background-image: url(../img/Ei.jpg);
+.navbar > .item {
+  width: 245px;
+  height: 85%;
+  align-items: center;
+  -o-align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-around;
+  -o-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -webkit-justify-content: space-around;
 }
 
-.main-container-3 {
-	background-image: url(../img/Herz.jpg);
+.navbar > .item:hover {
+  background-color: #FFF;
+  color: #2C2C2C;
 }
 
-.main-container-4 {
-	background-image: url(../img/Auge.jpg);
+footer {
+  align-items: center;
+  -o-align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: flex-start;
 }
 
-.tabs {
-	height: 35px;
-	width: 900px;
-	margin: auto;
+footer > .item {
+  flex-direction: column;
+  -o-flex-direction: column;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  width: 200px;
+  justify-content: flex-start;
+  -o-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -webkit-justify-content: flex-start;
 }
 
-.tab {
-	height: 100%;
-	line-height: 35px;
-	text-align: center;
+footer > .item > .item {
+  padding: 0 10px;
+  align-items: center;
+  -o-align-items: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  min-height: 30px;
 }
 
-.tab:hover {
-	background-color: rgba(163, 164, 164, 0.8);
+footer > .item:first-child > .item {
+  border-bottom: 1px solid #3C3C3C;
+  cursor: pointer;
 }
 
-.tab:active {
-	background-color: rgba(115, 116, 116, 0.8);
+footer > .item:first-child > .item > .icon {
+  margin-left: auto;
+  margin-right: 10px;
+  background-position: 0 -15px;
 }
 
-.content {
-	padding: 50px;
+footer > .item:first-child > .item:hover {
+  background-color: #3C3C3C;
+}
+
+footer > .item:last-child > .item > .icon {
+  height: 20px;
+  width: 20px;
+  margin: 0 10px 0 10px;
+  background-size: 20px;
+}
+
+footer > .item:last-child > .item:first-child > .icon {
+  background-position: 0 -40px;
+}
+
+footer > .item:last-child > .item:nth-child(2) > .icon {
+  background-position: 0 -60px;
+}
+
+footer > .item:last-child > .item:nth-child(3) > .icon {
+  background-position: 0 -80px;
 }

@@ -1,71 +1,140 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<!-- JS files -->
 		<!-- libs -->
 		<script type="text/javascript" src="libs/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="libs/handlebars-v1.3.0.js"></script>
-		<script type="text/javascript" src="libs/ember_1.5.1.prod.js"></script>
 
-		<!-- main -->
-		<script type="text/javascript" src="js/application.js"></script>
-		<script type="text/javascript" src="js/router.js"></script>
-
-		<!-- routes -->
-		<script type="text/javascript" src="js/routes/startPageRoute.js"></script>
-		<script type="text/javascript" src="js/routes/companyPageRoute.js"></script>
-		<script type="text/javascript" src="js/routes/productPageRoute.js"></script>
-		<script type="text/javascript" src="js/routes/impressumRoute.js"></script>
-
-    <!-- controllers -->
-    <script type="text/javascript" src="js/controllers/layoutController.js"></script>
-    <script type="text/javascript" src="js/controllers/startPageController.js"></script>
-    <script type="text/javascript" src="js/controllers/companyPageController.js"></script>
-    <script type="text/javascript" src="js/controllers/productPageController.js"></script>
-    <script type="text/javascript" src="js/controllers/impressumController.js"></script>
+		<!-- JS files -->
+		<script type="text/javascript" src="js/render.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/animations.js"></script>
 
 		<!--Stylesheets-->
+		<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
-	<body>
-    <script type="text/x-handlebars" data-template-name="layout">
-  		<div class="flex-container header">
-        <div class="tabs flex-container">
-          <div class="tab item no-select" {{action 'home'}}>Startseite</div>
-          <div class="tab item no-select" {{action 'product'}}>Produkt</div>
-          <div class="tab item no-select" {{action 'company'}}>Unternehmen</div>
-          <div class="tab item no-select" {{action 'impressum'}}>Impressum</div>
-        </div>
-      </div>
-      {{outlet}}
-    </script>
+	<body class="flex-container">
+		<div class="flex-container site">
+			<header class="header flex-container">
+				<div class="flex-container logo">
+					<p>Moment</p>
+					<img src="img/Agent0Logo2Kopie.png" height="60px" alt="Agent0">
+				</div>
+	      <div class="flex-container navbar" id="navbar">
+	        <div class="flex-container item no-select" onclick="visit('startPage')">Startseite</div>
+	        <div class="flex-container item no-select" onclick="visit('productPage')">Produkt</div>
+	        <div class="flex-container item no-select" onclick="visit('companyPage')">Unternehmen</div>
+	        <div class="flex-container item no-select" onclick="visit('impressum')">Impressum</div>
+	      </div>
+	    </header>
+			<div class="content" id="outlet">
 
-    <script type="text/x-handlebars" data-template-name="startPage">
-  		<div class="main-container main-container-1">
-        <div class="content">
-        </div>
-		  </div>
-    </script>
+			</div>
+			<footer class="flex-container">
+				<div class="flex-container item" id="map">
+					<div class="flex-container item" onclick="visit('startPage')">
+						<p>Startseite</p>
+						<div class="icon"></div>
+					</div>
+					<div class="flex-container item" onclick="visit('productPage')">
+						<p>Produkt</p>
+						<div class="icon"></div>
+					</div>
+					<div class="flex-container item" onclick="visit('companyPage')">
+						<p>Unternehmen</p>
+						<div class="icon"></div>
+					</div>
+					<div class="flex-container item" onclick="visit('impressum')">
+						<p>Impressum</p>
+						<div class="icon"></div>
+					</div>
+				</div>
+				<div class="flex-container item">
+					<div class="flex-container item">
+						<div class="icon"></div>
+						<p>info@moment0.com</p>
+					</div>
+					<div class="flex-container item">
+						<div class="icon"></div>
+						<p>+49 123/45678901</p>
+					</div>
+					<div class="flex-container item">
+						<div class="icon"></div>
+						<p>Offroad 5<br>12345 Miami<br>USA</p>
+					</div>
+				</div>
+			</footer>
+		</div>
 
-    <script type="text/x-handlebars" data-template-name="productPage">
-  		<div class="main-container main-container-2">
-        <div class="content">
-        </div>
-		  </div>
-    </script>
+		<script type="text/html" id="startPage">
+			<div>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
+				<p>startPage</p>
 
-    <script type="text/x-handlebars" data-template-name="companyPage">
-  		<div class="main-container main-container-3">
-        <div class="content">
-        </div>
-		  </div>
-    </script>
+			</div>
+		</script>
 
-    <script type="text/x-handlebars" data-template-name="impressum">
-  		<div class="main-container main-container-4">
-        <div class="content">
-        </div>
-		  </div>
-    </script>
+		<script type="text/html" id="productPage">
+			<div>
+				<p>productPage</p>
+			</div>
+		</script>
+
+		<script type="text/html" id="companyPage">
+			<div>
+				<p>companyPage</p>
+			</div>
+		</script>
+
+		<script type="text/html" id="impressum">
+			<div>
+				<p>impressum</p>
+			</div>
+		</script>
 	</body>
 </html>
