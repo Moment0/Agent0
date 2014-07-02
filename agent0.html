@@ -6,13 +6,17 @@
 
 		<!-- libs -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="libs/jquery.galleriffic.js"></script>
+		<script type="text/javascript" src="libs/jquery.opacityrollover.js"></script>
 		<!-- <script src="libs/jquery.js" type="text/javascript"></script> -->
 		<script src="libs/jquery.carouFredSel-6.2.1.js" type="text/javascript"></script>
 
 		<!-- JS files -->
 		<script type="text/javascript" src="js/carousel.js"></script>
+		<script type="text/javascript" src="js/gallery.js"></script>
 		<script type="text/javascript" src="js/render.js"></script>
 		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/tabs.js"></script>
 		<!-- // <script type="text/javascript" src="js/animations.js"></script> -->
 
 		<!--Stylesheets-->
@@ -21,6 +25,9 @@
 		<link href='http://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/carousel_style.css" type="text/css"/>
+		<link rel="stylesheet" href="css/gallery_style.css" type="text/css"/>
+		<link rel="stylesheet" href="css/table_style.css" type="text/css"/>
+		<!-- <link rel="stylesheet" href="css/reiter_style.css" type="text/css"/> -->
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
 	<body class="flex-container">
@@ -79,8 +86,7 @@
 		<script type="text/html" id="startPage">
 			<div class="startContent">
 				<div class="flex-container heading">
-					<span class="glow"></span>
-					<h1>Der Neue <span class="agent">Agent0</span></h1>
+					<span class="fancy fancy-before"></span><h1>Der Neue <span class="agent">Agent0</span></h1><span class="fancy fancy-after"></span>
 				</div>
 				<div id ="wrapper" class="wrapper">
 					<div id="carousel" >
@@ -95,95 +101,330 @@
 					<div class="arrow-container arrow-container-right" id="next">
 						<div class="arrow"><img id="right" src="img/big_sprite.png"></div>
 					</div>
+				</div>
 
+				<hr class="quotationRule">
+				<div class="quotations flex-container">
+					<div class="quotation billGates flex-container">
+						<p>"Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort."</p>
+						<div id="billPictureContainer"><img id="billPicture" src="img/Bill_Gates.png"></div>
+					</div>
+				</div>
+				<hr class="quotationRule quotationRule-middle" id="mid">
+				<hr class="quotationRule quotationRule-middle">
+				<div class="quotations flex-container">
+					<div class="quotation billGates flex-container">
+					<div id="billPictureContainer"><img id="billPicture" src="img/Dr_Dre.png"></div>
+						<p>"Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort."</p>
+					</div>
+				</div>
+				<hr class="quotationRule quotationRule-middle" id="mid">
+				<hr class="quotationRule quotationRule-middle">
+				<div class="quotations flex-container">
+					<div class="quotation billGates flex-container">
+						<p>"Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort."</p>
+						<div id="billPictureContainer"><img id="billPicture" src="img/Jony_Ive.png"></div>
+					</div>
+				</div>
+				<hr class="quotationRule">
+
+			</div>
+		</script>
+
+		<script type="text/html"  id="productPage">
+			<div class="productContent">
+				<div class="pager flex-container">
+					<div class="headerTab selected">Technische Daten</div>
+					<div class="headerTab">Produktfunktionen</div>
+					<div class="headerTab">Galerie</div>
+				</div>
+				<div class="tabs-container">
+					<div id="tabs" class="tabs flex-container">
+						<div class="tab">
+							<div id="dataTab">
+									<headline>Allgemein</headline>
+									<table>
+										<tr>
+											<th>Farbe</th>
+												<th>Impedanz</th>
+										</tr>
+										<tr>
+											<td>Schwarz</td>
+											<td>18 Ohm</td>
+										</tr>
+										<tr>
+												<th>Schalldruckpegel bei 1 kHz</th>
+												<th>Frequenzbereich</th>
+										</tr>
+										<tr>
+											<td>112 db (1kHz/Vrms)</td>
+											<td>2 - 80.000 Hz</td>
+										</tr>
+										<tr>
+												<th>Treiber</th>
+												<th>Klirrfaktor bei 1 kHz</th>
+										</tr>
+										<tr>
+												<td>Hoch- und Tieftöner</td>
+											<td>< 0,5 % (1 kHz, 100 dB SPL)</td>
+										</tr>
+												<th>Anschluss für Akku</th>
+												<th>Akkukapazität</th>
+										</tr>
+										<tr>
+												<td>mirco-USB</td>
+											<td>1.000 mAh</td>
+										</tr>
+										<tr>
+												<th>Gewicht</th>
+												<th>Nennbelastbarkeit</th>
+										</tr>
+										<tr>
+												<td>20 g</td>
+												<td>200 mW</td>
+										</tr>
+									</table>
+									<headline>Verbindung</headline>
+									<table>
+										<tr>
+											<th>W-Lan</th>
+												<th>Bluetooth</th>
+										</tr>
+										<tr>
+												<td>802.11n</td>
+												<td>4.0</td>
+										</tr>
+									</table>
+									<headline>Mikrofon</headline>
+									<table>
+										<tr>
+											<th>Stimmaufnahme</th>
+											<th>Mikrofonausrichtung</th>
+										</tr>
+											<td>Vibration des Kieferknochen</td>
+											<td>Omnidirektional</td>
+										</tr>
+									</table>
+									<headline>Design und Klang</headline>
+									<table>
+										<tr>
+											<th>LCP-Membran</th>
+												<th>Geräuscharme Verbindung</th>
+										</tr>
+										<tr>
+											<td>Ja</td>
+											<td>Ja</td>
+										</tr>
+										<tr>
+												<th>S-Master/Digitale Klangoptimierung</th>
+												<th>Beat Response Control</th>
+										</tr>
+										<tr>
+											<td>Ja</td>
+											<td>Ja</td>
+										</tr>
+									</table>
+							</div>
+						</div>
+						<div class="tab">
+							<p>Sesame snaps tootsie roll donut. Sweet roll candy canes chocolate bar wafer sweet roll gummies topping gummi bears. Pudding cheesecake cookie. Muffin sweet roll tart
+							tart muffin. Pastry pudding marshmallow cupcake cake toffee toffee bonbon topping. Apple pie cupcake caramels. Icing chocolate bar lemon drops caramels bonbon bear
+							claw.</p>
+						</div>
+						<div class="tab">
+							<div id="gallery_container">
+								<div id="gallery" class="gallery_content">
+									<div class="slideshow-container">
+										<div id="slideshow" class="slideshow"></div>
+									</div>
+								</div>
+								<div id="thumbs" class="navigation">
+									<ul class="thumbs noscript">
+										<!-- Photo 01 -->
+										<li>
+											<a class="thumb" href="img/Bild_1_groß.png">
+												<img src="img/Bild_1_klein.png" alt="Bild_1" />
+											</a>
+										</li>
+										<!-- Photo 02 -->
+										<li>
+											<a class="thumb" href="img/Bild_2_groß.png">
+												<img src="img/Bild_2_klein.png" alt="Bild_2" />
+											</a>
+										</li>
+										<!-- Photo 03 -->
+										<li>
+											<a class="thumb" href="img/Bild_3_groß.png">
+												<img src="img/Bild_3_klein.png" alt="Bild_3" />
+											</a>
+										</li>
+										<!-- Photo 04 -->
+										<li>
+											<a class="thumb" href="img/Bild_4_groß.png">
+												<img src="img/Bild_4_klein.png" alt="4" />
+											</a>
+										</li>
+										<!-- Photo 05 -->
+										<li>
+											<a class="thumb" href="img/Bild_5_groß.png">
+												<img src="img/Bild_5_klein.png" alt="Bild_5" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</script>
 
-		<script type="text/html" id="productPage">
+		<script type="text/html">
 			<div class="productContent">
 				<div class="tabs" id="wrapper">
     			<div class="flex-container" id="pager"></div>
     			<div id="tabs">
-    				<div id="daten">
-    					<h3>Technische Daten</h3>
+    				<div id="dataTab">
+							<h3>Technische Daten</h3>
+    					    					<headline>Allgemein</headline>
 							<table>
-							  <tr>
-							    <td>Farbe</td>
-								  <td>Schwarz</td>
-							  </tr>
-							  <tr>
-							    <td>Impedanz</td>
-								  <td>18 Ohm</td>
-							  </tr>
-							  <tr>
-							    <td>Audio-Übertragungsbereich</td>
-								  <td>2 - 25.000 Hz</td>
-							  </tr>
-							  <tr>
-							    <td>Schalldruckpegel bei 1 kHz</td>
-								  <td>112 db (1kHz/Vrms)</td>
-							  </tr>
-							  <tr>
-							    <td>Treiber</td>
-							    <td>Hoch- und Tieftöner in jedem Ohrstöpsel</td>
-							  </tr>
-							  <tr>
-							    <td>Klirrfaktor bei 1 kHz</td>
-								  <td>< 0,5 % (1 kHz, 100 dB SPL)</td>
-							  </tr>
-							  <tr>
-							    <td>Andruckkraft</td>
-							    <td>keine</td>
-							  </tr>
-							  <tr>
-							    <td>Ankopplung an das Ohr</td>
-							    <td>Ohrinnenliegend</td>
-								</tr>
-							  <tr>
-							    <td>Anschluss für Akku</td>
+							<tr>
+								<th>Farbe</th>
+							    <th>Impedanz</th>
+							</tr>
+							<tr>
+								<td>Schwarz</td>
+								<td>18 Ohm</td>
+							</tr>
+							<tr>
+							    <th>Schalldruckpegel bei 1 kHz</th>
+							    <th>Frequenzbereich</th>
+							</tr>
+							<tr>
+								<td>112 db (1kHz/Vrms)</td>
+								<td>2 - 80.000 Hz</td>
+							</tr>
+							<tr>
+							    <th>Treiber</th>
+							    <th>Klirrfaktor bei 1 kHz</th>
+							</tr>
+							<tr>
+							    <td>Hoch- und Tieftöner</td>
+								<td>< 0,5 % (1 kHz, 100 dB SPL)</td>
+							</tr>
+							    <th>Anschluss für Akku</th>
+							    <th>Akkukapazität</th>
+							</tr>
+							<tr>
 							    <td>mirco-USB</td>
-							  </tr>
-							  <tr>
-							    <td>Akkukapazität</td>
-							    <td>1.000 mAh</td>
-							  </tr>
-							  <tr>
-							    <td>W-Lan</td>
-							    <td>802.11n</td>
-							  </tr>
-							  <tr>
-							    <td>Bluetooth</td>
-							    <td>4.0</td>
-							  </tr>
-							  <tr>
-							    <td>Gewicht</td>
+								<td>1.000 mAh</td>
+							</tr>
+							<tr>
+							    <th>Gewicht</th>
+							    <th>Nennbelastbarkeit</th>
+							</tr>
+							<tr>
 							    <td>20 g</td>
-							  </tr>
-							  <tr>
-							    <td>Nennbelastbarkeit</td>
 							    <td>200 mW</td>
-							  </tr>
-							  <tr>
-							    <td>Sonstige Funktion</td>
-							    <td>aktive Lärmunterdrückung</td>
-							  </tr>
-							  <tr>
-							    <td>Artikelnummer</td>
-							    <td>105</td>
-							  </tr>
-							</table>
+							</tr>
+						</table>
+    				<headline>Verbindung</headline>
+						<table>
+							<tr>
+								<th>W-Lan</th>
+							    <th>Bluetooth</th>
+							</tr>
+							<tr>
+							    <td>802.11n</td>
+							    <td>4.0</td>
+							</tr>
+						</table>
+    				<headline>Mikrofon</headline>
+						<table>
+							<tr>
+								<th>Stimmaufnahme</th>
+								<th>Mikrofonausrichtung</th>
+							</tr>
+								<td>Vibration des Kieferknochen</td>
+								<td>Omnidirektional</td>
+							</tr>
+						</table>
+   					<headline>Design und Klang</headline>
+						<table>
+						<tr>
+							<th>LCP-Membran</th>
+						    <th>Geräuscharme Verbindung</th>
+						</tr>
+						<tr>
+							<td>Ja</td>
+							<td>Ja</td>
+						</tr>
+						<tr>
+						    <th>S-Master/Digitale Klangoptimierung</th>
+						    <th>Beat Response Control</th>
+						</tr>
+						<tr>
+							<td>Ja</td>
+							<td>Ja</td>
+						</tr>
+					</table>
 						</div>
-						<div id="funktion">
+						<div id="funktionTab">
 							<h3>Produktfunktion</h3>
 							<p>Sesame snaps tootsie roll donut. Sweet roll candy canes chocolate bar wafer sweet roll gummies topping gummi bears. Pudding cheesecake cookie. Muffin sweet roll tart
 							tart muffin. Pastry pudding marshmallow cupcake cake toffee toffee bonbon topping. Apple pie cupcake caramels. Icing chocolate bar lemon drops caramels bonbon bear
 							claw.</p>
 						</div>
-						<div id="galerie">
+						<div id="galleryTab">
 							<h3>Galerie</h3>
-								<p>Apple pie jelly gingerbread gummies topping. Gingerbread jelly marshmallow oat cake wafer lollipop. Cupcake chocolate cake apple pie. Caramels lollipop croissant
-								bear claw brownie carrot cake wafer halvah lollipop. Candy canes tootsie roll jelly-o. Liquorice sugar plum sweet icing tiramisu.</p>
+								<div id="gallery_container">
+							  <div id="gallery" class="gallery_content">
+									<div class="slideshow-container">
+									  <div id="slideshow" class="slideshow"></div>
+									</div>
+							  </div>
+
+							  <div id="thumbs" class="navigation">
+								<ul class="thumbs noscript">
+
+								  <!-- Photo 01 -->
+								  <li>
+									<a class="thumb" href="img/Bild_1_groß.png">
+									  <img src="img/Bild_1_klein.png" alt="Bild_1" />
+									</a>
+								  </li>
+
+								  <!-- Photo 02 -->
+								  <li>
+									<a class="thumb" href="img/Bild_2_groß.png">
+									  <img src="img/Bild_2_klein.png" alt="Bild_2" />
+									</a>
+								  </li>
+
+								  <!-- Photo 03 -->
+								  <li>
+									<a class="thumb" href="img/Bild_3_groß.png">
+									  <img src="img/Bild_3_klein.png" alt="Bild_3" />
+									</a>
+								  </li>
+
+								  <!-- Photo 04 -->
+								  <li>
+									<a class="thumb" href="img/Bild_4_groß.png">
+									  <img src="img/Bild_4_klein.png" alt="4" />
+									</a>
+								  </li>
+
+								  			<!-- Photo 05 -->
+											 <li>
+												<a class="thumb" href="img/Bild_5_groß.png">
+												  <img src="img/Bild_5_klein.png" alt="Bild_5" />
+												</a>
+								  		</li>
+										</ul>
+							  	</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

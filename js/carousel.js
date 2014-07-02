@@ -1,24 +1,24 @@
-var tabs = function() {
-    $('#tabs').carouFredSel({
-		circular: false,
-		items: 1, 		//anzahl der angezeigten Artikel pro Reiter
-		width: '100%',
-		auto: false,
-
-		pagination: {
-			container: '#pager',
-
-			anchorBuilder: function( nr ) {
-				return '<div class="tab"><p>' + $(this).find('h3').text() + '</p></div>';
-			}
-		}
-    });
-};
+// var tabs = function() {
+//     $('#tabs').carouFredSel({
+// 		circular: false,
+// 		items: 1, 		//anzahl der angezeigten Artikel pro Reiter
+// 		width: '100%',
+// 		auto: false,
+//
+// 		pagination: {
+// 			container: '#pager',
+//
+// 			anchorBuilder: function( nr ) {
+// 				return '<div class="tab"><p>' + $(this).find('h3').text() + '</p></div>';
+// 			}
+// 		}
+//     });
+// };
 
 var carousel = function() {
 	$('#carousel').carouFredSel({
-		prev: '#prev',
-		next: '#next',
+		prev: '#next',
+		next: '#prev',
 		circular: true,         // Determines whether the carousel should be circular.
 		infinite: true,         // Determines whether the carousel should be infinite. Note: It is possible to create a non-circular, infinite carousel, but it is not possible to create a circular, non-infinite carousel.
 		responsive: false,      // Determines whether the carousel should be responsive. If true, the items will be resized to fill the carousel.

@@ -39,14 +39,15 @@ var visit = function (page) {
         var pageHtml = document.getElementById(page).innerHTML;
         $(outlet).html(pageHtml);
         window.location.hash = page;
-        $('.selected').removeClass('selected');
+        $('.item.selected').removeClass('selected');
         $('.' + page + 'Nav').each(function (index, item) {
           $(item).addClass('selected');
         });
         window.setTimeout(function () {                                      //wegen der Assyncronität von Javascriptx
           if (page == "productPage") {
             tabs();
-          }
+            gallery_init();
+			    }
           if (page == "startPage") carousel();
         }, 50);
       }, 100);
@@ -56,12 +57,15 @@ var visit = function (page) {
     var pageHtml = document.getElementById(page).innerHTML;
     $(outlet).html(pageHtml);
     window.location.hash = page;
-    $('.selected').removeClass('selected');
+    $('.item.selected').removeClass('selected');
     $('.' + page + 'Nav').each(function (index, item) {
       $(item).addClass('selected');
     });
     window.setTimeout(function () {
-      if (page == "productPage") tabs();
+      if (page == "productPage") {
+        tabs();
+        gallery_init();
+			}
       if (page == "startPage") carousel();
     }, 50);
   }

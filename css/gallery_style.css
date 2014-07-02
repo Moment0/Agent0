@@ -1,0 +1,55 @@
+#gallery_container div.gallery_content {
+  /* The display of content is enabled using jQuery so that the slideshow
+     content won't display unless javascript is enabled. */
+  display: none;
+  float: right;
+  width: 720px;
+  margin: 0;
+ }
+
+#gallery_container div.slideshow-container {
+  position: relative;
+  clear: both;
+}
+
+#gallery_container div.slideshow span.image-wrapper {
+  overflow: hidden;
+  text-align: center;
+  position: absolute;
+}
+
+#gallery_container div.slideshow img {
+
+  max-width: 706px;
+  /* max-width workaround for IE */
+  height: expression(this.width >= 706 ? 'auto' : true);
+  width: expression(this.width > 706 ? 706 : true);
+
+  vertical-align: middle;
+  /* vertical align for IE */
+  margin-top: expression(this.height > 0 && this.height < 566 ? (566 - this.height) / 2 : 0);
+}
+
+#gallery_container ul.thumbs li {
+  float: left;
+  padding: 0;
+  margin: 5px 10px 5px 0;
+  list-style: none;
+}
+
+#gallery_container a.thumb {
+  /*display: block;*/
+  float: left;
+  border: 2px solid #c8c8c8;
+}
+
+#gallery_container div.pagination {
+  clear: both;
+}
+
+#gallery_container div.pagination a, div.pagination span.current, div.pagination span.ellipsis {
+  display: block;
+  float: left;
+  margin-right: 2px;
+  padding: 4px 7px 2px 7px;
+}
