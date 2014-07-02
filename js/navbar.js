@@ -2,7 +2,7 @@ $(document).ready(function() {
   $('#navbar').clone().attr('id', 'fixed-navbar').addClass('invisible').appendTo('.header');
 
   $(window).bind('scroll', function() {
-    if ($(window).scrollTop() > 80) {
+    if ($(window).scrollTop() > 100) {
       $('#fixed-navbar').removeClass('invisible');
      }
      else {

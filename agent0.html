@@ -1,50 +1,60 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="img/Agent0Logo2Kopie.png" type="image/png" />
+
 		<!-- libs -->
-		<script type="text/javascript" src="libs/jquery-2.1.1.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+		<!-- <script src="libs/jquery.js" type="text/javascript"></script> -->
+		<script src="libs/jquery.carouFredSel-6.2.1.js" type="text/javascript"></script>
 
 		<!-- JS files -->
+		<script type="text/javascript" src="js/carousel.js"></script>
 		<script type="text/javascript" src="js/render.js"></script>
 		<script type="text/javascript" src="js/navbar.js"></script>
-		<script type="text/javascript" src="js/animations.js"></script>
+		<!-- // <script type="text/javascript" src="js/animations.js"></script> -->
 
 		<!--Stylesheets-->
 		<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/carousel_style.css" type="text/css"/>
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
 	<body class="flex-container">
 		<div class="flex-container site">
-			<header class="header flex-container">
-				<div class="flex-container logo">
-					<p>Moment</p>
-					<img src="img/Agent0Logo2Kopie.png" height="60px" alt="Agent0">
+			<header class="header flex-container no-select">
+				<div class="flex-container logo-container">
+					<div class="flex-container logo" onclick="visit('startPage')">
+						<p>Moment</p>
+						<img src="img/Agent0LogoWeiss.png" height="60px" alt="Agent0">
+					</div>
 				</div>
 	      <div class="flex-container navbar" id="navbar">
-	        <div class="flex-container item no-select" onclick="visit('startPage')">Startseite</div>
-	        <div class="flex-container item no-select" onclick="visit('productPage')">Produkt</div>
-	        <div class="flex-container item no-select" onclick="visit('companyPage')">Unternehmen</div>
-	        <div class="flex-container item no-select" onclick="visit('impressum')">Impressum</div>
+	        <div class="flex-container item startPageNav" onclick="visit('startPage')">Startseite</div>
+	        <div class="flex-container item productPageNav" onclick="visit('productPage')">Produkt</div>
+	        <div class="flex-container item companyPageNav" onclick="visit('companyPage')">Unternehmen</div>
+	        <div class="flex-container item impressumNav" onclick="visit('impressum')">Impressum</div>
 	      </div>
 	    </header>
-			<div class="content" id="outlet">
-
-			</div>
+			<outlet class="content" id="outlet"></outlet>
 			<footer class="flex-container">
 				<div class="flex-container item" id="map">
-					<div class="flex-container item" onclick="visit('startPage')">
+					<div class="flex-container item" id="map-startPage" onclick="visit('startPage')">
 						<p>Startseite</p>
 						<div class="icon"></div>
 					</div>
-					<div class="flex-container item" onclick="visit('productPage')">
+					<div class="flex-container item" id="map-productPage" onclick="visit('productPage')">
 						<p>Produkt</p>
 						<div class="icon"></div>
 					</div>
-					<div class="flex-container item" onclick="visit('companyPage')">
+					<div class="flex-container item" id="map-companyPage" onclick="visit('companyPage')">
 						<p>Unternehmen</p>
 						<div class="icon"></div>
 					</div>
-					<div class="flex-container item" onclick="visit('impressum')">
+					<div class="flex-container item" id="map-impressum" onclick="visit('impressum')">
 						<p>Impressum</p>
 						<div class="icon"></div>
 					</div>
@@ -60,80 +70,206 @@
 					</div>
 					<div class="flex-container item">
 						<div class="icon"></div>
-						<p>Offroad 5<br>12345 Miami<br>USA</p>
+						<p>Offroad 5<br>33139 Miami<br>USA</p>
 					</div>
 				</div>
 			</footer>
 		</div>
 
 		<script type="text/html" id="startPage">
-			<div>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
-				<p>startPage</p>
+			<div class="startContent">
+				<div class="flex-container heading">
+					<span class="glow"></span>
+					<h1>Der Neue <span class="agent">Agent0</span></h1>
+				</div>
+				<div id ="wrapper" class="wrapper">
+					<div id="carousel" >
+						<img src="img/Bild_1_Slider.png" width="828px" height="460px">
+						<img src="img/Bild_2_Slider.png" width="828px" height="460px">
+						<img src="img/Bild_3_Slider.png" width="828px" height="460px">
+					</div>
 
+					<div class="arrow-container arrow-container-left" id="prev">
+						<div class="arrow"><img id="left" src="img/big_sprite.png"></div>
+					</div>
+					<div class="arrow-container arrow-container-right" id="next">
+						<div class="arrow"><img id="right" src="img/big_sprite.png"></div>
+					</div>
+
+				</div>
 			</div>
 		</script>
 
 		<script type="text/html" id="productPage">
-			<div>
-				<p>productPage</p>
+			<div class="productContent">
+				<div class="tabs" id="wrapper">
+    			<div class="flex-container" id="pager"></div>
+    			<div id="tabs">
+    				<div id="daten">
+    					<h3>Technische Daten</h3>
+							<table>
+							  <tr>
+							    <td>Farbe</td>
+								  <td>Schwarz</td>
+							  </tr>
+							  <tr>
+							    <td>Impedanz</td>
+								  <td>18 Ohm</td>
+							  </tr>
+							  <tr>
+							    <td>Audio-Übertragungsbereich</td>
+								  <td>2 - 25.000 Hz</td>
+							  </tr>
+							  <tr>
+							    <td>Schalldruckpegel bei 1 kHz</td>
+								  <td>112 db (1kHz/Vrms)</td>
+							  </tr>
+							  <tr>
+							    <td>Treiber</td>
+							    <td>Hoch- und Tieftöner in jedem Ohrstöpsel</td>
+							  </tr>
+							  <tr>
+							    <td>Klirrfaktor bei 1 kHz</td>
+								  <td>< 0,5 % (1 kHz, 100 dB SPL)</td>
+							  </tr>
+							  <tr>
+							    <td>Andruckkraft</td>
+							    <td>keine</td>
+							  </tr>
+							  <tr>
+							    <td>Ankopplung an das Ohr</td>
+							    <td>Ohrinnenliegend</td>
+								</tr>
+							  <tr>
+							    <td>Anschluss für Akku</td>
+							    <td>mirco-USB</td>
+							  </tr>
+							  <tr>
+							    <td>Akkukapazität</td>
+							    <td>1.000 mAh</td>
+							  </tr>
+							  <tr>
+							    <td>W-Lan</td>
+							    <td>802.11n</td>
+							  </tr>
+							  <tr>
+							    <td>Bluetooth</td>
+							    <td>4.0</td>
+							  </tr>
+							  <tr>
+							    <td>Gewicht</td>
+							    <td>20 g</td>
+							  </tr>
+							  <tr>
+							    <td>Nennbelastbarkeit</td>
+							    <td>200 mW</td>
+							  </tr>
+							  <tr>
+							    <td>Sonstige Funktion</td>
+							    <td>aktive Lärmunterdrückung</td>
+							  </tr>
+							  <tr>
+							    <td>Artikelnummer</td>
+							    <td>105</td>
+							  </tr>
+							</table>
+						</div>
+						<div id="funktion">
+							<h3>Produktfunktion</h3>
+							<p>Sesame snaps tootsie roll donut. Sweet roll candy canes chocolate bar wafer sweet roll gummies topping gummi bears. Pudding cheesecake cookie. Muffin sweet roll tart
+							tart muffin. Pastry pudding marshmallow cupcake cake toffee toffee bonbon topping. Apple pie cupcake caramels. Icing chocolate bar lemon drops caramels bonbon bear
+							claw.</p>
+						</div>
+						<div id="galerie">
+							<h3>Galerie</h3>
+								<p>Apple pie jelly gingerbread gummies topping. Gingerbread jelly marshmallow oat cake wafer lollipop. Cupcake chocolate cake apple pie. Caramels lollipop croissant
+								bear claw brownie carrot cake wafer halvah lollipop. Candy canes tootsie roll jelly-o. Liquorice sugar plum sweet icing tiramisu.</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</script>
 
 		<script type="text/html" id="companyPage">
-			<div>
-				<p>companyPage</p>
+			<div class="companyContent">
+				<h2>Unternehmenshistorie</h2>
+				<p>
+					Moment0 wurde vor 20 Jahren von Frau Karina Reiter, Herrn Marc Hennemann, Herrn David Reyinger, Herrn Michael Vitzthum und Herrn Christopher Walker gegründet. In den ersten
+					Jahren konzentrierten sich die Unternehmer noch auf die Produktion von hochwertigen Bluetooth-Kopfhörern. Nachdem einige Produkte etabliert und stabile Geschäftsbeziehungen
+					aufgebaut wurden, entschlossen sich die Gründer dazu, an neuartigen Produkten zu forschen. Im Laufe der Zeit entwickelte das Unternehmen einen hochwertigen In-Ear-Kopfhörer,
+					der sich über Bluetooth mit verschiedensten Geräten verbinden kann. Nach einigen intensiven Gesprächen unter den Gründern und auch einigen Investoren entschlossen die
+					Geschäftsführer, vollkommen auf diese neue Art von Musikhören zu konzentrieren. Im Zuge der Umstrukturierung mussten leider Frau Karina Reiter und Herr Christopher Walker das
+					Unternehmen verlassen. Mit Hilfe einiger Investoren konnte einer der modernsten Produktionsstandorte in Deutschland geschaffen werden.
+					(Zurzeit werden ca. 20 Stück pro Tag gefertigt. Diese Zahl spiegelt nicht nur die Exklusivität des Produkts sondern auch die exakte und penible Arbeitsweise der 50
+					Mitarbeiter wider. )
+				</p>
+				<h2>Portraits</h2>
+				<div class="flex-container portrait-container">
+					<div class="item flex-container portrait">
+						<h3 class="item">Marc Hennemann, CEO</h3>
+						<img src="img/vitzthum.jpg" alt="vitzthum" id="vitzthum" class="item">
+						<p class="item">
+							Marc Hennemann ist geschäftsführender Teilhaber des Unternehmens. Er wurde in New York  geboren, besuchte die Grundschule in Madrid und absolvierte danach ein privates
+							Gymnasium in Augsburg. Somit konnte er früh internationale Erfahrungen sammeln. Nachdem er das Abitur mit 1,0 bestand, begann er ein BWL-Studium an der WU München, das
+							bereits nach 4 Jahren mit dem Master of Science abschloss. Er war auch die treibende Kraft, die alle anderen Gründungsmitglieder von seiner Geschäftsidee überzeugte.
+						</p>
+					</div>
+					<div class="item flex-container portrait">
+						<h3 class="item">David Reyinger, CTO</h3>
+						<img src="img/vitzthum.jpg" alt="vitzthum" id="vitzthum" class="item">
+						<p class="item">
+							David Reyinger stellt als Chief Technology Officer den kreativen Kopf der Unternehmensführung dar. Er wurde in einer kleiner bescheidenen Gemeinde in der Schwäbischen Alb
+							geboren. Seine Eltern erkannten aber früh seine Begabung, weshalb er eine private Kindertagesstätte besuchte. Dort wurde sein kreatives Denken in vielfacher Art und Weiße
+							gezielt gefördert. Er besuchte eine spezielle Grundschule in Frankfurt, an der er Michael Vitzthum kennen lernte. Um internationale Erfahrung zu sammeln, ging er auf ein
+							besonderes privates College, dessen Lage an dieser Stelle nicht genannt werden darf. Seine Doktorarbeit schrieb er an der Elite-Uni MIT nach nur 6 Jahren.
+						</p>
+					</div>
+					<div class="item flex-container portrait">
+						<h3 class="item">Michael Vitzthum, CFO</h3>
+						<img src="img/vitzthum.jpg" alt="vitzthum" id="vitzthum" class="item">
+						<p class="item">
+							Michael Vitzthum ist der kaufmännische Leiter und Finanzvorstand. Er wuchs ohne Eltern auf der Straße auf. Erst nachdem er sich selbst mithilfe von gefundenen Büchern
+							selbst lesen und schreiben beibrachte, konnte er sich als Zeitungsausträger erstes Geld verdienen. Sein erstes kleines Vermögen investierte er in Staubsauger, die er
+							gewinnbringend weiterverkaufte. Als Jugendlicher kaufte er sich Anteile von Start-Ups und verdiente damit seine erste Million. Er finanzierte die Gründung und den Aufbau
+							des Standorts.
+						</p>
+					</div>
+				</div>
 			</div>
 		</script>
 
 		<script type="text/html" id="impressum">
-			<div>
-				<p>impressum</p>
+			<div class="impressumContent">
+				<h2>Impressum</h2>
+				<h3>Moment0 GmbH</h3>
+				<table>
+					<tr>
+						<th><p>Adresse:</p></th>
+						<td>
+							<p>
+								Offroad 5<br>
+								33139 Miami<br>
+								USA
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th><p>Mail:</p></th>
+						<td><p>info@moment0.de</p></td>
+					</tr>
+					<tr>
+						<th>Standort:</th>
+						<td>
+							<p>
+								Sitz Miami<br>
+								Handelsregister Miami<br>
+								HRB 109625
+							</p>
+					<tr>
+						<th><p>Geschäftsführer:</p></th>
+						<td><p>Marc Hennemann</p></td>
+					</td>
+				</table>
 			</div>
 		</script>
 	</body>
