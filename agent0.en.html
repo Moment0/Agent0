@@ -1,0 +1,402 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="img/Agent0Logo2Kopie.png" type="image/png" />
+
+		<!-- libs -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="libs/jquery.galleriffic.js"></script>
+		<script type="text/javascript" src="libs/jquery.opacityrollover.js"></script>
+		<script src="libs/jquery.carouFredSel-6.2.1.js" type="text/javascript"></script>
+
+		<!-- JS files -->
+		<script type="text/javascript" src="js/carousel.js"></script>
+		<script type="text/javascript" src="js/gallery.js"></script>
+		<script type="text/javascript" src="js/render.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/footer.js"></script>
+		<script type="text/javascript" src="js/tabs.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+		<!--Stylesheets-->
+		<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/carousel_style.css" type="text/css"/>
+		<link rel="stylesheet" href="css/gallery_style.css" type="text/css"/>
+		<link rel="stylesheet" href="css/table_style.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+	</head>
+	<body class="flex-container">
+		<div class="flex-container site">
+			<header class="header flex-container no-select">
+				<div class="flex-container logo-container">
+					<div class="flex-container logo" onclick="visit('startPage')">
+						<p>Moment</p>
+						<img src="img/Agent0LogoWeiss.png" height="60px" alt="Agent0">
+					</div>
+					<div class="language-switch"><a href="agent0.de.html"><span id="de">DE</span>/<span id='en' class="active">EN</span></a></div>
+				</div>
+	      <div class="flex-container navbar" id="navbar">
+	        <div class="flex-container item startPageNav" onclick="visit('startPage')">Startpage</div>
+	        <div class="flex-container item productPageNav" onclick="visit('productPage')">Product</div>
+	        <div class="flex-container item companyPageNav" onclick="visit('companyPage')">Company</div>
+	        <div class="flex-container item impressumNav" onclick="visit('impressum')">Impressum</div>
+	      </div>
+	    </header>
+			<outlet class="content" id="outlet"></outlet>
+			<footer class="flex-container footer no-select" id="footer">
+				<div class="flex-container item" id="map">
+					<div class="flex-container item" id="map-startPage" onclick="visit('startPage')">
+						<p>Startpage</p>
+						<div class="icon"></div>
+					</div>
+					<div class="flex-container item" id="map-productPage" onclick="visit('productPage')">
+						<p>Product</p>
+						<div class="icon"></div>
+					</div>
+					<div class="flex-container item" id="map-companyPage" onclick="visit('companyPage')">
+						<p>Company</p>
+						<div class="icon"></div>
+					</div>
+					<div class="flex-container item" id="map-impressum" onclick="visit('impressum')">
+						<p>Impressum</p>
+						<div class="icon"></div>
+					</div>
+				</div>
+				<div class="flex-container item">
+					<div class="flex-container item">
+						<div class="icon"></div>
+						<a href="mailto:info@moment0.com">info@moment0.com</a>
+					</div>
+					<div class="flex-container item">
+						<div class="icon"></div>
+						<p>+49 123/45678901</p>
+					</div>
+					<div class="flex-container item">
+						<div class="icon"></div>
+						<p onclick="openMap()" id="adress">Offroad 5<br>33139 Miami<br>USA</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script type="text/html" id="startPage">
+			<div class="startContent">
+				<div class="flex-container heading">
+					<span class="fancy fancy-before"></span><h1>The brand new <span class="agent">Agent0</span></h1><span class="fancy fancy-after"></span>
+				</div>
+				<div id ="wrapper" class="wrapper">
+					<div id="carousel" >
+						<img src="img/Bild_1_Slider.png" width="828px" height="460px">
+						<img src="img/Bild_2_Slider.png" width="828px" height="460px">
+						<img src="img/Bild_3_Slider.png" width="828px" height="460px">
+					</div>
+
+					<div class="arrow-container arrow-container-left" id="prev">
+						<div class="arrow"><img id="left" src="img/big_sprite.png"></div>
+					</div>
+					<div class="arrow-container arrow-container-right" id="next">
+						<div class="arrow"><img id="right" src="img/big_sprite.png"></div>
+					</div>
+				</div>
+
+				<hr class="quotationRule">
+				<div class="quotations flex-container">
+					<div class="quotation billGates flex-container">
+						<p>„After a fractal of a second I didn’t even remember that I was wearing <span class="agent">Agent0</span> in my ear. An unbeatable comfort.“</p>
+						<div id="billPictureContainer"><img id="billPicture" src="img/Bill_Gates.png"></div>
+					</div>
+				</div>
+				<hr class="quotationRule quotationRule-middle" id="mid">
+				<hr class="quotationRule quotationRule-middle">
+				<div class="quotations flex-container">
+					<div class="quotation drDre flex-container">
+						<div id="drePictureContainer"><img id="drePicture" src="img/Dr_Dre.png"></div>
+						<p>„I rarely had the pleasure to wear a headphone which offers such a perfect sound. Not only the bass also the altitude a surprisingly balanced.“</p>
+					</div>
+				</div>
+				<hr class="quotationRule quotationRule-middle" id="mid">
+				<hr class="quotationRule quotationRule-middle">
+				<div class="quotations flex-container">
+					<div class="quotation jonyIve flex-container">
+						<p>„<span class="agent">Agent0‘s</span> design convinced me with his simple but excellent finish.“</p>
+						<div id="jonyPictureContainer"><img id="jonyPicture" src="img/Jony_Ive.png"></div>
+					</div>
+				</div>
+				<hr class="quotationRule">
+
+			</div>
+		</script>
+
+		<script type="text/html"  id="productPage">
+			<div class="productContent">
+				<div class="pager flex-container">
+					<div class="headerTab selected">Specifications</div>
+					<div class="headerTab">Product capabilities</div>
+					<div class="headerTab">Gallery</div>
+				</div>
+				<div class="tabs-container">
+					<div id="tabs" class="tabs flex-container">
+						<div class="tab">
+							<div id="dataTab">
+									<headline>General</headline>
+									<table>
+										<tr>
+											<th>Color</th>
+												<th>Impedance</th>
+										</tr>
+										<tr>
+											<td>Black</td>
+											<td>18 Ohm</td>
+										</tr>
+										<tr>
+												<th>Sound pressure level at 1 kHz</th>
+												<th>Frequency range</th>
+										</tr>
+										<tr>
+											<td>112 db (1kHz/Vrms)</td>
+											<td>2 - 80.000 Hz</td>
+										</tr>
+										<tr>
+												<th>Drivers</th>
+												<th>Klirr factor at 1 kHz</th>
+										</tr>
+										<tr>
+												<td>High- Mid- and Low</td>
+											<td>< 0,5 % (1 kHz, 100 dB SPL)</td>
+										</tr>
+												<th>Powersupply connection</th>
+												<th>Battery</th>
+										</tr>
+										<tr>
+												<td>mirco-USB</td>
+											<td>1.000 mAh</td>
+										</tr>
+										<tr>
+												<th>Weight</th>
+												<th>Maximum power input</th>
+										</tr>
+										<tr>
+												<td>20 g</td>
+												<td>200 mW</td>
+										</tr>
+									</table>
+									<headline>Connectivity</headline>
+									<table>
+										<tr>
+											<th>W-Lan</th>
+												<th>Bluetooth</th>
+										</tr>
+										<tr>
+												<td>802.11n</td>
+												<td>4.0</td>
+										</tr>
+									</table>
+									<headline>Microphone</headline>
+									<table>
+										<tr>
+											<th>Voice recording</th>
+											<th>Microphone orientation</th>
+										</tr>
+											<td>Jaw vibrations</td>
+											<td>Omnidirectional</td>
+										</tr>
+									</table>
+									<headline>Design and Sound</headline>
+									<table>
+										<tr>
+											<th>LCP-Membran</th>
+												<th>Noisless Connection</th>
+										</tr>
+										<tr>
+											<td>Yes</td>
+											<td>Yes</td>
+										</tr>
+										<tr>
+												<th>S-Master/Digital soundoptimization</th>
+												<th>Beat Response Control</th>
+										</tr>
+										<tr>
+											<td>Yes</td>
+											<td>Yes</td>
+										</tr>
+									</table>
+							</div>
+						</div>
+						<div class="tab" id="functionsTab">
+							<div class="functionsInner">
+								<h2>Private usage</h2>
+								<p>With its perfect sound the agent0 is the perfect replacement for a heavy hifi-system. A simple and intuitive handling enables a fast and comfortable entrance to an
+								unforgettable soundexperience, as if you are sitting in a concert hall or a music studio.</p>
+								<h2>Business usage</h2>
+								<p>
+									Due to the timeless and simple but modern design the agent0 is also perfect for customers who do not want to be seen with a heavy bluetooth headset.
+									With the integrated microphone, which uses the vibration of the jaw to record your voice, and because of the perfect fitting execution and the high wearing comfort it
+									is possible to sit in endless meetings without an unpleasant feeling in your ear.
+								</p>
+							</div>
+						</div>
+						<div class="tab">
+							<div id="gallery_container">
+								<div id="gallery" class="gallery_content">
+									<div class="slideshow-container">
+										<div id="slideshow" class="slideshow"></div>
+									</div>
+								</div>
+								<div id="thumbs" class="navigation">
+									<ul class="thumbs noscript">
+										<!-- Photo 01 -->
+										<li>
+											<a class="thumb" href="img/Bild_1_groß.png">
+												<img src="img/Bild_1_klein.png" alt="Bild_1" />
+											</a>
+										</li>
+										<!-- Photo 02 -->
+										<li>
+											<a class="thumb" href="img/Bild_2_groß.png">
+												<img src="img/Bild_2_klein.png" alt="Bild_2" />
+											</a>
+										</li>
+										<!-- Photo 03 -->
+										<li>
+											<a class="thumb" href="img/Bild_3_groß.png">
+												<img src="img/Bild_3_klein.png" alt="Bild_3" />
+											</a>
+										</li>
+										<!-- Photo 04 -->
+										<li>
+											<a class="thumb" href="img/Bild_4_groß.png">
+												<img src="img/Bild_4_klein.png" alt="4" />
+											</a>
+										</li>
+										<!-- Photo 05 -->
+										<li>
+											<a class="thumb" href="img/Bild_5_groß.png">
+												<img src="img/Bild_5_klein.png" alt="Bild_5" />
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/html" id="companyPage">
+			<div class="companyContent">
+				<div class="history-container">
+					<h2>Company history</h2>
+					<p>
+						Moment0 was founded 20 years ago by Miss Karina Reiter, Marc Hennemann, David Reyinger, Michael Vitzhum and Christopher Walker. In their first years they concentrated on
+						the Production of highquality Bluetooth-Headphones. After some Products were successfully established, the founders decided to research new product capabilities. After time
+						went by the company developed a revolutionary In-Ear-Headphone which is able to connect to several devices with Bluetooth. After a lot of intense and thoughtful discussions
+						between the entrepreneurs and some investors the company lead decided to dedicate completely on this new way of listening to music. Due to the reorganization Karina Reiter
+						and Christopher Walker two of the founders had to leave the company.
+						Nonetheless the support of investors helped the company to build one of the most modern productcentres in Germany. So far the company is able to produce 20 headphones per
+						day which is not only a indicator of exclusivity more a perfect  procedure from the 50 employees.
+					</p>
+				</div>
+				<div class="flex-container portrait-container">
+					<div class="item flex-container portrait">
+						<img src="img/wahlberg.jpg" alt="Marc Hennemann" id="hennemann" class="item">
+						<div class="item">
+							<h3 class="name">Marc Hennemann, CEO</h3>
+							<p>
+								Marc Hennemann is the managing director and joint partner of the company.Hhe was born in New York, New York and visited primary school in Madrid and graduated high
+								school in Augsburg. Thus he was able to gain a lot of international experience. After he graduated with straight A’s he started to study Economies in Munich and
+								finished his time I University after 4years and a Master of Arts.
+								He was also the driving force who convinced all other founders of his idea.
+							</p>
+						</div>
+					</div>
+					<div class="item flex-container portrait">
+						<img src="img/beckham.jpg" alt="David Reyinger" id="reyinger" class="item">
+						<div class="item">
+							<h3 class="name">David Reyinger, CTO</h3>
+							<p class="item">
+								David Reyinger is the creative head of the company. He was born in a small modest village in the swabian alb. His parents early discovered his potential that is why
+								they send him to a private day nursery which helped him to develop and boost his creativity. He visited a special primary School in Frankfurt where he met Michael
+								Vitzthum for the first time. To gain international experience he went to a private college. After 6year at the MIT he wrote his dissertation and that’s where he also
+								gained his Doctor title.
+							</p>
+						</div>
+					</div>
+					<div class="item flex-container portrait">
+						<img src="img/bay.jpg" alt="Michael Vitzthum" id="vitzthum" class="item">
+						<div class="item">
+							<h3 class="name">Michael Vitzthum, CFO</h3>
+							<p class="item">
+								Michael Vitzhum is the commercial leader and Chief Financial Officer of the company. He grew up as an orphan on the street. After he taught himself with discovered old
+								books how to read and write. He earned his first money with newspaper delivers. He invested his first small fortune in vacuum cleaners, which he could sell twice the
+								price he bought them. As a youth he bought  parts of Start-Ups and that’s how he gained his first million. He also financed the foundation and the idea of the company
+								in the first place.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/html" id="impressum">
+			<div class="impressumContent">
+				<h2>Impressum</h2>
+				<h3>Moment0 GmbH</h3>
+				<table>
+					<tr>
+						<th><p>Adress:</p></th>
+						<td>
+							<p>
+								Offroad 5<br>
+								33139 Miami<br>
+								USA
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<th><p>Mail:</p></th>
+						<td><p>info@moment0.de</p></td>
+					</tr>
+					<tr>
+						<th>Location:</th>
+						<td>
+							<p>
+								Headquarter Miami<br>
+								Commercial register<br>
+								HRB 109625
+							</p>
+					<tr>
+						<th><p>CEO:</p></th>
+						<td><p>Marc Hennemann</p></td>
+					</td>
+				</table>
+
+				<h2>Disclaimer</h2>
+				<h3>1. Liability for Content</h3>
+				<p>We make every effort to keep the information on our Web site current, but accept no liability whatsoever for the content provided. Pursuant to §7 par. 1 of TMG (German
+				Tele-Media Act), the law limits our responsibility as a service provider to our own content on these Web pages.
+				According to §§8 to 10 of TMG, we are not obligated to monitor third party information provided or stored on our Web site. However, we shall promptly remove any content upon
+				becoming aware that it violates the law. Our liability in such an instance shall commence at the time we become aware of the respective violation.</p>
+				<h3>2. Liability for Links</h3>
+				<p>Our site contains links to third-party Web sites. We have no influence whatsoever on the information on these Web sites and accept no guaranty for its correctness. The
+				content of such third-party sites is the responsibility of the respective owners/providers.
+				At the time third-party Web sites were linked to ours, we found no grounds whatsoever of any likely contravention of the law. We shall promptly delete a link upon becoming
+				aware that it violates the law.
+				<h3>3. Copyrights</h3>
+				<p>The content and works provided on these Web pages are governed by the copyright laws of Germany. Duplication, processing, distribution, or any form of commercialization of
+				such material beyond the scope of the copyright law shall require the prior written consent of its respective author or creator.</p>
+				<h3>4. Data Protection</h3>
+				<p>Please be aware that there are inherent security risks in transmitting data, such as e-mails, via the Internet, because it is impossible to safeguard completely against
+				unauthorized access by third parties. Nevertheless, we shall safeguard your data, subject to this limitation. In particular, personal information will be transmitted via the
+				Internet only if it does not infringe upon third-party rights, unless the respective party has given its prior consent in view of such security risks. Accordingly, as the Web
+				site provider, we shall not be held liable for any damages incurred as a consequence of such security risks or for any related acts of omission on our part.
+				We oppose the use of any available contact information by a third party for sending unsolicite advertisements. As the Web site provider, we reserve the express right to take
+				legal action against unsolicited mailing or e-mailing of spam and other similar advertising materials.</p>
+			</div>
+		</script>
+	</body>
+</html>

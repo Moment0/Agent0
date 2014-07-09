@@ -8,7 +8,6 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="libs/jquery.galleriffic.js"></script>
 		<script type="text/javascript" src="libs/jquery.opacityrollover.js"></script>
-		<!-- <script src="libs/jquery.js" type="text/javascript"></script> -->
 		<script src="libs/jquery.carouFredSel-6.2.1.js" type="text/javascript"></script>
 
 		<!-- JS files -->
@@ -16,8 +15,9 @@
 		<script type="text/javascript" src="js/gallery.js"></script>
 		<script type="text/javascript" src="js/render.js"></script>
 		<script type="text/javascript" src="js/navbar.js"></script>
+		<script type="text/javascript" src="js/footer.js"></script>
 		<script type="text/javascript" src="js/tabs.js"></script>
-		<!-- // <script type="text/javascript" src="js/animations.js"></script> -->
+		<script type="text/javascript" src="js/main.js"></script>
 
 		<!--Stylesheets-->
 		<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
@@ -27,7 +27,6 @@
 		<link rel="stylesheet" href="css/carousel_style.css" type="text/css"/>
 		<link rel="stylesheet" href="css/gallery_style.css" type="text/css"/>
 		<link rel="stylesheet" href="css/table_style.css" type="text/css"/>
-		<!-- <link rel="stylesheet" href="css/reiter_style.css" type="text/css"/> -->
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 	</head>
 	<body class="flex-container">
@@ -38,6 +37,7 @@
 						<p>Moment</p>
 						<img src="img/Agent0LogoWeiss.png" height="60px" alt="Agent0">
 					</div>
+					<div class="language-switch"><a href="agent0.en.html"><span id="de" class="active">DE</span>/<span id='en'>EN</span></a></div>
 				</div>
 	      <div class="flex-container navbar" id="navbar">
 	        <div class="flex-container item startPageNav" onclick="visit('startPage')">Startseite</div>
@@ -47,7 +47,7 @@
 	      </div>
 	    </header>
 			<outlet class="content" id="outlet"></outlet>
-			<footer class="flex-container">
+			<footer class="flex-container footer no-select" id="footer">
 				<div class="flex-container item" id="map">
 					<div class="flex-container item" id="map-startPage" onclick="visit('startPage')">
 						<p>Startseite</p>
@@ -69,7 +69,7 @@
 				<div class="flex-container item">
 					<div class="flex-container item">
 						<div class="icon"></div>
-						<p>info@moment0.com</p>
+						<a href="mailto:info@moment0.com">info@moment0.com</a>
 					</div>
 					<div class="flex-container item">
 						<div class="icon"></div>
@@ -77,7 +77,7 @@
 					</div>
 					<div class="flex-container item">
 						<div class="icon"></div>
-						<p>Offroad 5<br>33139 Miami<br>USA</p>
+						<p onclick="openMap()" id="adress">Offroad 5<br>33139 Miami<br>USA</p>
 					</div>
 				</div>
 			</footer>
@@ -106,24 +106,24 @@
 				<hr class="quotationRule">
 				<div class="quotations flex-container">
 					<div class="quotation billGates flex-container">
-						<p>"Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort."</p>
+						<p>„Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort.“</p>
 						<div id="billPictureContainer"><img id="billPicture" src="img/Bill_Gates.png"></div>
 					</div>
 				</div>
 				<hr class="quotationRule quotationRule-middle" id="mid">
 				<hr class="quotationRule quotationRule-middle">
 				<div class="quotations flex-container">
-					<div class="quotation billGates flex-container">
-					<div id="billPictureContainer"><img id="billPicture" src="img/Dr_Dre.png"></div>
-						<p>"Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort."</p>
+					<div class="quotation drDre flex-container">
+						<div id="drePictureContainer"><img id="drePicture" src="img/Dr_Dre.png"></div>
+						<p>„Ich habe selten einen Kopfhörer getragen, der eine so exakte Klang-wiedergabe bietet. Nicht nur der Bass sondern auch Mitten und Höhen sind perfekt ausbalanciert.“</p>
 					</div>
 				</div>
 				<hr class="quotationRule quotationRule-middle" id="mid">
 				<hr class="quotationRule quotationRule-middle">
 				<div class="quotations flex-container">
-					<div class="quotation billGates flex-container">
-						<p>"Nach wenigen Minuten vergesse ich immer, dass ich den <span class="agent">Agent0</span><br>im Ohr habe.<br>Unschlagbarer Tragekomfort."</p>
-						<div id="billPictureContainer"><img id="billPicture" src="img/Jony_Ive.png"></div>
+					<div class="quotation jonyIve flex-container">
+						<p>„Das Design des <span class="agent">Agent0</span> überzeugt mich durch seine schlichte und äußerst hochwertige Verarbeitung“</p>
+						<div id="jonyPictureContainer"><img id="jonyPicture" src="img/Jony_Ive.png"></div>
 					</div>
 				</div>
 				<hr class="quotationRule">
@@ -136,7 +136,7 @@
 				<div class="pager flex-container">
 					<div class="headerTab selected">Technische Daten</div>
 					<div class="headerTab">Produktfunktionen</div>
-					<div class="headerTab">Galerie</div>
+					<div class="headerTab">Gallerie</div>
 				</div>
 				<div class="tabs-container">
 					<div id="tabs" class="tabs flex-container">
@@ -165,7 +165,7 @@
 												<th>Klirrfaktor bei 1 kHz</th>
 										</tr>
 										<tr>
-												<td>Hoch- und Tieftöner</td>
+												<td>Hoch- Mittel- und Tieftöner</td>
 											<td>< 0,5 % (1 kHz, 100 dB SPL)</td>
 										</tr>
 												<th>Anschluss für Akku</th>
@@ -226,10 +226,17 @@
 									</table>
 							</div>
 						</div>
-						<div class="tab">
-							<p>Sesame snaps tootsie roll donut. Sweet roll candy canes chocolate bar wafer sweet roll gummies topping gummi bears. Pudding cheesecake cookie. Muffin sweet roll tart
-							tart muffin. Pastry pudding marshmallow cupcake cake toffee toffee bonbon topping. Apple pie cupcake caramels. Icing chocolate bar lemon drops caramels bonbon bear
-							claw.</p>
+						<div class="tab" id="functionsTab">
+							<div class="functionsInner">
+								<h2>Privatkunden</h2>
+								<p>Mit seiner perfekten Soundqualität ist Agent0 der perfekte Ersatz für eine sperrige Surround-Sound-Anlage. Eine einfache und intuitive Bedienung ermöglicht den
+								schnellen und bequemen Einstieg in ein Klangerlebnis, als würde man direkt im Opernsaal, der Konzerthalle oder dem Tonstudio sitzen. Egal ob ruhige Klassik,
+								basslastiger Techno, wilder Rock, oder stimmgewaltige Oper, sämtliche Musikvarianten werden perfekt ausbalanciert wiedergegeben.</p>
+								<h2>Geschäftskunden</h2>
+								<p>Dank des zeitlosen, schlichten und doch modernen Designs ist Agent0 auch perfekt für Kunden, die nicht mit einem klobigen Bluetooth-Kopfhörer im Büro gesehen werden
+								möchten. Über das integrierte Mikrofon, welches die Schwingungen aus dem Kiefer aufnimmt, und aufgrund der passgenauen Ausführung und dem hohen Tragekomfort kann auch
+								an stundenlangen Meetings teilgenommen werden, ohne dass ein ungutes Gefühl im Ohr entsteht.</p>
+							</div>
 						</div>
 						<div class="tab">
 							<div id="gallery_container">
@@ -279,201 +286,54 @@
 			</div>
 		</script>
 
-		<script type="text/html">
-			<div class="productContent">
-				<div class="tabs" id="wrapper">
-    			<div class="flex-container" id="pager"></div>
-    			<div id="tabs">
-    				<div id="dataTab">
-							<h3>Technische Daten</h3>
-    					    					<headline>Allgemein</headline>
-							<table>
-							<tr>
-								<th>Farbe</th>
-							    <th>Impedanz</th>
-							</tr>
-							<tr>
-								<td>Schwarz</td>
-								<td>18 Ohm</td>
-							</tr>
-							<tr>
-							    <th>Schalldruckpegel bei 1 kHz</th>
-							    <th>Frequenzbereich</th>
-							</tr>
-							<tr>
-								<td>112 db (1kHz/Vrms)</td>
-								<td>2 - 80.000 Hz</td>
-							</tr>
-							<tr>
-							    <th>Treiber</th>
-							    <th>Klirrfaktor bei 1 kHz</th>
-							</tr>
-							<tr>
-							    <td>Hoch- und Tieftöner</td>
-								<td>< 0,5 % (1 kHz, 100 dB SPL)</td>
-							</tr>
-							    <th>Anschluss für Akku</th>
-							    <th>Akkukapazität</th>
-							</tr>
-							<tr>
-							    <td>mirco-USB</td>
-								<td>1.000 mAh</td>
-							</tr>
-							<tr>
-							    <th>Gewicht</th>
-							    <th>Nennbelastbarkeit</th>
-							</tr>
-							<tr>
-							    <td>20 g</td>
-							    <td>200 mW</td>
-							</tr>
-						</table>
-    				<headline>Verbindung</headline>
-						<table>
-							<tr>
-								<th>W-Lan</th>
-							    <th>Bluetooth</th>
-							</tr>
-							<tr>
-							    <td>802.11n</td>
-							    <td>4.0</td>
-							</tr>
-						</table>
-    				<headline>Mikrofon</headline>
-						<table>
-							<tr>
-								<th>Stimmaufnahme</th>
-								<th>Mikrofonausrichtung</th>
-							</tr>
-								<td>Vibration des Kieferknochen</td>
-								<td>Omnidirektional</td>
-							</tr>
-						</table>
-   					<headline>Design und Klang</headline>
-						<table>
-						<tr>
-							<th>LCP-Membran</th>
-						    <th>Geräuscharme Verbindung</th>
-						</tr>
-						<tr>
-							<td>Ja</td>
-							<td>Ja</td>
-						</tr>
-						<tr>
-						    <th>S-Master/Digitale Klangoptimierung</th>
-						    <th>Beat Response Control</th>
-						</tr>
-						<tr>
-							<td>Ja</td>
-							<td>Ja</td>
-						</tr>
-					</table>
-						</div>
-						<div id="funktionTab">
-							<h3>Produktfunktion</h3>
-							<p>Sesame snaps tootsie roll donut. Sweet roll candy canes chocolate bar wafer sweet roll gummies topping gummi bears. Pudding cheesecake cookie. Muffin sweet roll tart
-							tart muffin. Pastry pudding marshmallow cupcake cake toffee toffee bonbon topping. Apple pie cupcake caramels. Icing chocolate bar lemon drops caramels bonbon bear
-							claw.</p>
-						</div>
-						<div id="galleryTab">
-							<h3>Galerie</h3>
-								<div id="gallery_container">
-							  <div id="gallery" class="gallery_content">
-									<div class="slideshow-container">
-									  <div id="slideshow" class="slideshow"></div>
-									</div>
-							  </div>
-
-							  <div id="thumbs" class="navigation">
-								<ul class="thumbs noscript">
-
-								  <!-- Photo 01 -->
-								  <li>
-									<a class="thumb" href="img/Bild_1_groß.png">
-									  <img src="img/Bild_1_klein.png" alt="Bild_1" />
-									</a>
-								  </li>
-
-								  <!-- Photo 02 -->
-								  <li>
-									<a class="thumb" href="img/Bild_2_groß.png">
-									  <img src="img/Bild_2_klein.png" alt="Bild_2" />
-									</a>
-								  </li>
-
-								  <!-- Photo 03 -->
-								  <li>
-									<a class="thumb" href="img/Bild_3_groß.png">
-									  <img src="img/Bild_3_klein.png" alt="Bild_3" />
-									</a>
-								  </li>
-
-								  <!-- Photo 04 -->
-								  <li>
-									<a class="thumb" href="img/Bild_4_groß.png">
-									  <img src="img/Bild_4_klein.png" alt="4" />
-									</a>
-								  </li>
-
-								  			<!-- Photo 05 -->
-											 <li>
-												<a class="thumb" href="img/Bild_5_groß.png">
-												  <img src="img/Bild_5_klein.png" alt="Bild_5" />
-												</a>
-								  		</li>
-										</ul>
-							  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</script>
-
 		<script type="text/html" id="companyPage">
 			<div class="companyContent">
-				<h2>Unternehmenshistorie</h2>
-				<p>
-					Moment0 wurde vor 20 Jahren von Frau Karina Reiter, Herrn Marc Hennemann, Herrn David Reyinger, Herrn Michael Vitzthum und Herrn Christopher Walker gegründet. In den ersten
-					Jahren konzentrierten sich die Unternehmer noch auf die Produktion von hochwertigen Bluetooth-Kopfhörern. Nachdem einige Produkte etabliert und stabile Geschäftsbeziehungen
-					aufgebaut wurden, entschlossen sich die Gründer dazu, an neuartigen Produkten zu forschen. Im Laufe der Zeit entwickelte das Unternehmen einen hochwertigen In-Ear-Kopfhörer,
-					der sich über Bluetooth mit verschiedensten Geräten verbinden kann. Nach einigen intensiven Gesprächen unter den Gründern und auch einigen Investoren entschlossen die
-					Geschäftsführer, vollkommen auf diese neue Art von Musikhören zu konzentrieren. Im Zuge der Umstrukturierung mussten leider Frau Karina Reiter und Herr Christopher Walker das
-					Unternehmen verlassen. Mit Hilfe einiger Investoren konnte einer der modernsten Produktionsstandorte in Deutschland geschaffen werden.
-					(Zurzeit werden ca. 20 Stück pro Tag gefertigt. Diese Zahl spiegelt nicht nur die Exklusivität des Produkts sondern auch die exakte und penible Arbeitsweise der 50
-					Mitarbeiter wider. )
-				</p>
-				<h2>Portraits</h2>
+				<div class="history-container">
+					<h2>Unternehmenshistorie</h2>
+					<p>
+						Moment0 wurde vor 20 Jahren von Frau Karina Reiter, Herrn Marc Hennemann, Herrn David Reyinger, Herrn Michael Vitzthum und Herrn Christopher Walker gegründet. In den ersten
+						Jahren konzentrierten sich die Unternehmer noch auf die Produktion von hochwertigen Bluetooth-Kopfhörern. Nachdem einige Produkte etabliert und stabile Geschäftsbeziehungen
+						aufgebaut wurden, entschlossen sich die Gründer dazu, an neuartigen Produkten zu forschen. Im Laufe der Zeit entwickelte das Unternehmen einen hochwertigen
+						In-Ear-Kopfhörer, der sich über Bluetooth mit verschiedensten Geräten verbinden kann. Nach einigen intensiven Gesprächen unter den Gründern und auch einigen Investoren
+						entschlossen die Geschäftsführer, vollkommen auf diese neue Art von Musikhören zu konzentrieren. Im Zuge der Umstrukturierung mussten leider Frau Karina Reiter und Herr
+						Christopher Walker das Unternehmen verlassen. Mit Hilfe einiger Investoren konnte einer der modernsten Produktionsstandorte in Deutschland geschaffen werden.
+					</p>
+				</div>
 				<div class="flex-container portrait-container">
 					<div class="item flex-container portrait">
-						<h3 class="item">Marc Hennemann, CEO</h3>
-						<img src="img/vitzthum.jpg" alt="vitzthum" id="vitzthum" class="item">
-						<p class="item">
+						<img src="img/wahlberg.jpg" alt="Marc Hennemann" id="hennemann" class="item">
+						<div class="item">
+							<h3 class="name">Marc Hennemann, CEO</h3>
+							<p>
 							Marc Hennemann ist geschäftsführender Teilhaber des Unternehmens. Er wurde in New York  geboren, besuchte die Grundschule in Madrid und absolvierte danach ein privates
 							Gymnasium in Augsburg. Somit konnte er früh internationale Erfahrungen sammeln. Nachdem er das Abitur mit 1,0 bestand, begann er ein BWL-Studium an der WU München, das
 							bereits nach 4 Jahren mit dem Master of Science abschloss. Er war auch die treibende Kraft, die alle anderen Gründungsmitglieder von seiner Geschäftsidee überzeugte.
-						</p>
+							</p>
+						</div>
 					</div>
 					<div class="item flex-container portrait">
-						<h3 class="item">David Reyinger, CTO</h3>
-						<img src="img/vitzthum.jpg" alt="vitzthum" id="vitzthum" class="item">
-						<p class="item">
+						<img src="img/beckham.jpg" alt="David Reyinger" id="reyinger" class="item">
+						<div class="item">
+							<h3 class="name">David Reyinger, CTO</h3>
+							<p>
 							David Reyinger stellt als Chief Technology Officer den kreativen Kopf der Unternehmensführung dar. Er wurde in einer kleiner bescheidenen Gemeinde in der Schwäbischen Alb
 							geboren. Seine Eltern erkannten aber früh seine Begabung, weshalb er eine private Kindertagesstätte besuchte. Dort wurde sein kreatives Denken in vielfacher Art und Weiße
 							gezielt gefördert. Er besuchte eine spezielle Grundschule in Frankfurt, an der er Michael Vitzthum kennen lernte. Um internationale Erfahrung zu sammeln, ging er auf ein
 							besonderes privates College, dessen Lage an dieser Stelle nicht genannt werden darf. Seine Doktorarbeit schrieb er an der Elite-Uni MIT nach nur 6 Jahren.
-						</p>
+							</p>
+						</div>
 					</div>
 					<div class="item flex-container portrait">
-						<h3 class="item">Michael Vitzthum, CFO</h3>
-						<img src="img/vitzthum.jpg" alt="vitzthum" id="vitzthum" class="item">
-						<p class="item">
+						<img src="img/bay.jpg" alt="Michael Vitzthum" id="vitzthum" class="item">
+						<div class="item">
+							<h3 class="name">Michael Vitzthum, CFO</h3>
+							<p>
 							Michael Vitzthum ist der kaufmännische Leiter und Finanzvorstand. Er wuchs ohne Eltern auf der Straße auf. Erst nachdem er sich selbst mithilfe von gefundenen Büchern
 							selbst lesen und schreiben beibrachte, konnte er sich als Zeitungsausträger erstes Geld verdienen. Sein erstes kleines Vermögen investierte er in Staubsauger, die er
 							gewinnbringend weiterverkaufte. Als Jugendlicher kaufte er sich Anteile von Start-Ups und verdiente damit seine erste Million. Er finanzierte die Gründung und den Aufbau
 							des Standorts.
-						</p>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -511,6 +371,44 @@
 						<td><p>Marc Hennemann</p></td>
 					</td>
 				</table>
+
+				<h2>Haftungsausschluss</h2>
+				<h3>1. Inhalt des Onlineangebotes</h3>
+				<p>Der Autor übernimmt keinerlei Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Autor,
+				welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und
+				unvollständiger Informationen verursacht wurden, sind grundsätzlich ausgeschlossen, sofern seitens des Autors kein nachweislich vorsätzliches oder grob fahrlässiges Verschulden
+				vorliegt.
+				Alle Angebote sind freibleibend und unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu
+				verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+				<h3>2. Verweise und Links</h3>
+				<p>Bei direkten oder indirekten Verweisen auf fremde Webseiten ("Hyperlinks"), die außerhalb des Verantwortungsbereiches des Autors liegen, würde eine Haftungsverpflichtung
+				ausschließlich in dem Fall in Kraft treten, in dem der Autor von den Inhalten Kenntnis hat und es ihm technisch möglich und zumutbar wäre, die Nutzung im Falle rechtswidriger
+				Inhalte zu verhindern.
+				Der Autor erklärt hiermit ausdrücklich, dass zum Zeitpunkt der Linksetzung keine illegalen Inhalte auf den zu verlinkenden Seiten erkennbar waren. Auf die aktuelle und
+				zukünftige Gestaltung, die Inhalte oder die Urheberschaft der verlinkten/verknüpften Seiten hat der Autor keinerlei Einfluss. Deshalb distanziert er sich hiermit ausdrücklich
+				von allen Inhalten aller verlinkten /verknüpften Seiten, die nach der Linksetzung verändert wurden. Diese Feststellung gilt für alle innerhalb des eigenen Internetangebotes
+				gesetzten Links und Verweise sowie für Fremdeinträge in vom Autor eingerichteten Gästebüchern, Diskussionsforen, Linkverzeichnissen, Mailinglisten und in allen anderen Formen
+				von Datenbanken, auf deren Inhalt externe Schreibzugriffe möglich sind. Für illegale, fehlerhafte oder unvollständige Inhalte und insbesondere für Schäden, die aus der Nutzung
+				oder Nichtnutzung solcherart dargebotener Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über Links auf die
+				jeweilige Veröffentlichung lediglich verweist.</p>
+				<h3>3. Urheber- und Kennzeichenrecht</h3>
+				<p>Der Autor ist bestrebt, in allen Publikationen die Urheberrechte der verwendeten Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu beachten, von ihm selbst
+				erstellte Bilder, Grafiken, Tondokumente, Videosequenzen und Texte zu nutzen oder auf lizenzfreie Grafiken, Tondokumente, Videosequenzen und Texte zurückzugreifen.
+				Alle innerhalb des Internetangebotes genannten und ggf. durch Dritte geschützten Marken- und Warenzeichen unterliegen uneingeschränkt den Bestimmungen des jeweils gültigen
+				Kennzeichenrechts und den Besitzrechten der jeweiligen eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluss zu ziehen, dass Markenzeichen nicht
+				durch Rechte Dritter geschützt sind!
+				Das Copyright für veröffentlichte, vom Autor selbst erstellte Objekte bleibt allein beim Autor der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, Tondokumente,
+				Videosequenzen und Texte in anderen elektronischen oder gedruckten Publikationen ist ohne ausdrückliche Zustimmung des Autors nicht gestattet.</p>
+				<h3>4. Datenschutz</h3>
+				<p>Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die
+				Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. Die Inanspruchnahme und Bezahlung aller angebotenen Dienste ist - soweit technisch möglich und
+				zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter Daten oder eines Pseudonyms gestattet. Die Nutzung der im Rahmen des Impressums oder vergleichbarer
+				Angaben veröffentlichten Kontaktdaten wie Postanschriften, Telefon- und Faxnummern sowie Emailadressen durch Dritte zur Übersendung von nicht ausdrücklich angeforderten
+				Informationen ist nicht gestattet. Rechtliche Schritte gegen die Versender von sogenannten Spam-Mails bei Verstößen gegen dieses Verbot sind ausdrücklich vorbehalten.</p>
+				<h3>5. Rechtswirksamkeit dieses Haftungsausschlusses</h3>
+				<p>Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses
+				Textes der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, bleiben die übrigen Teile des Dokumentes in ihrem Inhalt und ihrer Gültigkeit
+				davon unberührt.</p>
 			</div>
 		</script>
 	</body>

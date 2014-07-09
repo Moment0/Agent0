@@ -17,8 +17,8 @@
 
 var carousel = function() {
 	$('#carousel').carouFredSel({
-		prev: '#next',
-		next: '#prev',
+		prev: '#prev',
+		next: '#next',
 		circular: true,         // Determines whether the carousel should be circular.
 		infinite: true,         // Determines whether the carousel should be infinite. Note: It is possible to create a non-circular, infinite carousel, but it is not possible to create a circular, non-infinite carousel.
 		responsive: false,      // Determines whether the carousel should be responsive. If true, the items will be resized to fill the carousel.

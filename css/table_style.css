@@ -1,17 +1,25 @@
-table {
-padding-left: 80px;
-border-bottom: 1px solid rgba(230, 20, 25, 0.2);
+#dataTab table {
+  width: 689px;
+  padding-left: 80px;
+  border-bottom: 1px solid rgba(230, 20, 25, 0.2);
 }
 
-th{
-padding-right: 180px;
-font-weight: 800;
+#dataTab tr {
+  width: 689px;
 }
 
-td {
-padding-bottom: 20px;
+#dataTab th {
+  width: 345px;
+  /*padding-right: 180px;*/
+  font-weight: 800;
+  text-align: justify;
 }
 
-headline {
-font-size: 20pt;
+#dataTab td {
+  width: 345px;
+  padding-bottom: 20px;
+}
+
+#dataTab headline {
+  font-size: 20pt;
 }

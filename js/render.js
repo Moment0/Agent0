@@ -25,8 +25,6 @@ $(document).ready(function () {
   window.onhashchange = function (visitor) {
     visit(window.location.hash.substr(1));
   };
-
-
 });
 
 var visit = function (page) {
