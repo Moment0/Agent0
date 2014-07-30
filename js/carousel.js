@@ -1,20 +1,3 @@
-// var tabs = function() {
-//     $('#tabs').carouFredSel({
-// 		circular: false,
-// 		items: 1, 		//anzahl der angezeigten Artikel pro Reiter
-// 		width: '100%',
-// 		auto: false,
-//
-// 		pagination: {
-// 			container: '#pager',
-//
-// 			anchorBuilder: function( nr ) {
-// 				return '<div class="tab"><p>' + $(this).find('h3').text() + '</p></div>';
-// 			}
-// 		}
-//     });
-// };
-
 var carousel = function() {
 	$('#carousel').carouFredSel({
 		prev: '#prev',
